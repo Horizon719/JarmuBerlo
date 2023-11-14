@@ -1,8 +1,10 @@
 # Jarmű Bérlő
 
-| GitHub Oldal          | Netbeans Project | Readme             |
-|-----------------------|-------------------|--------------------|
-| Milichovszky Sándor   | Péti Dominik      | Milichovszky Sándor|
+| Feladat                   | Készítők               |
+|---------------------------|------------------------|
+| GitHub Oldal              | Milichovszky Sándor    |
+| Netbeans Project          | Péti Dominik           |
+| Readme                    | Milichovszky Sándor    |
 
 ## Leírás
 A program járművek (autó, mnotor) bérbeadását kezeli. A járműveket rendszám alapján azonosítja a rendszer, ami alapján törénik a bérbeadás.
