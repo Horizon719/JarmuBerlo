@@ -26,6 +26,22 @@ public class JarmuBerloProgram {
         berloJarmuvei();
         berlo.bevesz(kiadott);
         berloJarmuvei();
+        
+        System.out.println("Tankolás tesztelése:");
+        kiadott = berlo.berbeAd("2", "premium");
+        berlo.bevesz(kiadott);
+        kiadott = berlo.berbeAd("2", "premium");
+        berlo.bevesz(kiadott);
+        kiadott = berlo.berbeAd("2", "premium");
+        berloJarmuvei();
+        berlo.tankol();
+        berlo.bevesz(kiadott);
+        berloJarmuvei();
+        kiadott = berlo.berbeAd("2", "premium");
+        berlo.bevesz(kiadott);
+        berloJarmuvei();
+        berlo.tankol();
+        berloJarmuvei();
     }
     
     private void berloJarmuvei() {

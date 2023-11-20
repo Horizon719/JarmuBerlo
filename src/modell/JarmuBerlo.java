@@ -38,14 +38,15 @@ public class JarmuBerlo {
             if("altalanos".equals(berlesTipus)){
                 String tipus = jarmuvek[i] instanceof Auto ? "auto" : "motor";
                 jarmuvek[i].altalanosBerlesHatasa();
-                jarmuvek[i].setAmortizalt(true);
-                System.out.println("Kiadva jarmuszam: %s, tipus: %s!".formatted(jarmuSzam, tipus));
+                jarmuvek[i].setUzemanyag(jarmuvek[i].getUzemanyag() - 50);
+                System.out.println("Kiadva általános bérléssel{jarmuszam: %s, tipus: %s}".formatted(jarmuSzam, tipus));
                 j = jarmuvek[i];
                 jarmuvek[i] = null;
             } else{
                 String tipus = jarmuvek[i] instanceof Auto ? "auto" : "motor";
                 jarmuvek[i].premiumBerlesHatasa();
-                System.out.println("Kiadva jarmuszam: %s, tipus: %s!".formatted(jarmuSzam, tipus));
+                jarmuvek[i].setUzemanyag(jarmuvek[i].getUzemanyag() - 50);
+                System.out.println("Kiadva prémium bérléssel{jarmuszam: %s, tipus: %s}".formatted(jarmuSzam, tipus));
                 j = jarmuvek[i];
                 jarmuvek[i] = null;
             }
@@ -65,6 +66,14 @@ public class JarmuBerlo {
         
         this.jarmuvek[i] = jarmu;
         System.out.println("Visszahozva a(z) %s számú %s".formatted(jarmu.getJarmuSzam(), this.jarmuvek[i].getClass().getSimpleName()));
+    }
+    
+    public void tankol(){
+        for (int i = 0; i < jarmuvek.length; i++) {
+            if (jarmuvek[i] != null) {
+                jarmuvek[i].setUzemanyag(1000);
+            }
+        }
     }
     
     public Jarmu[] getJarmuvek() {

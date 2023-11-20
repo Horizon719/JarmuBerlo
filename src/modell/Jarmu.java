@@ -2,11 +2,11 @@ package modell;
 
 public abstract class Jarmu {
     private String jarmuSzam;
-    private boolean amortizalt;
+    private int uzemanyag;
     
     public Jarmu(String jarmuSzam) {
         this.jarmuSzam = jarmuSzam;
-        amortizalt = false;
+        uzemanyag = 1000;
     }
 
     public String getJarmuSzam() {
@@ -17,17 +17,17 @@ public abstract class Jarmu {
         this.jarmuSzam = jarmuSzam;
     }
     
-    public boolean isAmortizalt() {
-        return amortizalt;
+    public int getUzemanyag() {
+        return uzemanyag;
     }
 
-    public void setAmortizalt(boolean amortizalt) {
-        this.amortizalt = amortizalt;
+    public void setUzemanyag(int uzemanyag) {
+        this.uzemanyag = uzemanyag;
     }
 
     @Override
     public String toString() {
-        return "Jarmu{" + "jarmuSzam=" + jarmuSzam + ", amortizalt=" + amortizalt + '}';
+        return "Jarmu{" + "jarmuSzam=" + jarmuSzam + ", uzemanyag=" + uzemanyag + '}';
     }
     
     public abstract void altalanosBerlesHatasa();
