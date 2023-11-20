@@ -18,7 +18,7 @@ public class JarmuBerloProgram {
         
         jarmuvekKilistaz(jarmuBerlo);
         
-        Jarmu jarmu = jarmuBerlo.berbead("AAA-  1", BerbeadasTipusa.NORMAL);
+        Jarmu jarmu = jarmuBerlo.berbead("AAA-001", BerbeadasTipusa.NORMAL);
         
         jarmuvekKilistaz(jarmuBerlo);
         
@@ -30,7 +30,8 @@ public class JarmuBerloProgram {
         
         jarmuvekKilistaz(jarmuBerlo);
         
-        jarmu = jarmuBerlo.berbead("AAA-  0", BerbeadasTipusa.PREMIUM);
+        jarmu = jarmuBerlo.berbead("AAA-000", BerbeadasTipusa.PREMIUM);
+        jarmuBerlo.bevesz(jarmu);
         jarmuBerlo.bevesz(jarmu);
         
         jarmuvekKilistaz(jarmuBerlo);
