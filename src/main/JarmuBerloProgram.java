@@ -17,7 +17,6 @@ public class JarmuBerloProgram {
     public JarmuBerloProgram(){
         berlo = new JarmuBerlo(5);
         berloJarmuvei();
-        
     }
     
     private void berloJarmuvei() {
