@@ -5,7 +5,6 @@ import java.util.Random;
 
 public class JarmuBerlo {
     private Jarmu[] jarmuvek;
-    private int jarmuDb;
     private static Random rnd = new Random();
 
     public JarmuBerlo() {
@@ -29,21 +28,43 @@ public class JarmuBerlo {
         return jarmuvek;
     }
     
-    public Jarmu kiad(String jarmuSzam){
+    public Jarmu berbeAd(String jarmuSzam, String berlesTipus){
         Jarmu j = new NemLetezoJarmu();
         int i = 0;
-        while (jarmuvek[i] == null || i < jarmuDb && !(jarmuvek[i].getJarmuSzam().equals(jarmuSzam))) {
+        while (jarmuvek[i] == null || (i < jarmuvek.length && !(jarmuvek[i].getJarmuSzam().equals(jarmuSzam)))) {
             i++;
         }
-        if (i < jarmuDb) {
-            String tipus = jarmuvek[i] instanceof Auto ? "auto" : "motor";
-            System.out.println("Kiadva %s %s!".formatted(jarmuSzam, tipus));
-            j = jarmuvek[i];
-            jarmuvek[i] = new NemLetezoJarmu();
+        if (i < jarmuvek.length) {
+            if("altalanos".equals(berlesTipus)){
+                String tipus = jarmuvek[i] instanceof Auto ? "auto" : "motor";
+                jarmuvek[i].altalanosBerlesHatasa();
+                jarmuvek[i].setAmortizalt(true);
+                System.out.println("Kiadva jarmuszam: %s, tipus: %s!".formatted(jarmuSzam, tipus));
+                j = jarmuvek[i];
+                jarmuvek[i] = null;
+            } else{
+                String tipus = jarmuvek[i] instanceof Auto ? "auto" : "motor";
+                jarmuvek[i].premiumBerlesHatasa();
+                System.out.println("Kiadva jarmuszam: %s, tipus: %s!".formatted(jarmuSzam, tipus));
+                j = jarmuvek[i];
+                jarmuvek[i] = null;
+            }
+            
         } else {
             System.out.println("Nincs ilyen jarmű a bérlőben!");
         }
         return j;
+    }
+    
+    public void bevesz(Jarmu jarmu) {
+        int i = 0;
+        
+        while(i < this.jarmuvek.length && this.jarmuvek[i] != null && !(this.jarmuvek[i] instanceof NemLetezoJarmu)) {
+            i++;
+        }
+        
+        this.jarmuvek[i] = jarmu;
+        System.out.println("Visszahozva a(z) %s számú %s".formatted(jarmu.getJarmuSzam(), this.jarmuvek[i].getClass().getSimpleName()));
     }
     
     public Jarmu[] getJarmuvek() {

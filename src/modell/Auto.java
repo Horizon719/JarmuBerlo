@@ -38,9 +38,7 @@ public class Auto extends Jarmu{
 
     @Override
     public void altalanosBerlesHatasa() {
-        if(kavics.ordinal() > 0){
-            kavics = Kavicsfelverodes.values()[kavics.ordinal() - 1];
-        }
+        felverodik();
     }
     
     @Override
