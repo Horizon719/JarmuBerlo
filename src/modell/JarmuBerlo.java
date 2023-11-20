@@ -55,10 +55,10 @@ public class JarmuBerlo {
         
         if (index >= this.jarmuvek.length) {
             System.out.println("Nincs elég hely");
+        } else {
+            this.jarmuvek[index] = jarmu;
+            System.out.println("Visszahozva a() %s rendszámú %s".formatted(jarmu.getRendszam(), this.jarmuvek[index].getClass().getSimpleName()));
         }
-        
-        this.jarmuvek[index] = jarmu;
-        System.out.println("Visszahozva a() %s rendszámú %s".formatted(jarmu.getRendszam(), this.jarmuvek[index].getClass().getSimpleName()));
     }
 
     public Jarmu[] getJarmuvek() {
